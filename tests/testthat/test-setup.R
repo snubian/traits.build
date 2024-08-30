@@ -728,10 +728,10 @@ testthat::test_that("`dataset_find_taxon` is working", {
 
 test_that("reports and plots are produced", {
   expect_silent(suppressMessages(austraits <- remake::make("test_name")))
-  # Not testing right now
+  # Not testing right now and moving back to austraits package
   #expect_no_error(
     #p <-
-      #traits.build::plot_trait_distribution_beeswarm(
+      #austraits::plot_trait_distribution_beeswarm(
         #austraits, "huber_value", "dataset_id", highlight = "Test_2022", hide_ids = TRUE)
   #)
   expect_silent(
