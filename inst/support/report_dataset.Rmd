@@ -96,10 +96,10 @@ library(knitr)
 library(kableExtra)
 
 
-my_kable_styling <- util_kable_styling_html
+my_kable_styling <- traits.build::util_kable_styling_html
 
 definitions <- austraits$definitions
-data_study <- extract_dataset(austraits, dataset_id)
+data_study <- austraits::extract_dataset(austraits, dataset_id)
 metadata <- read_metadata(file.path("data", dataset_id, "metadata.yml"))
 schema <- austraits$schema
 
@@ -565,7 +565,7 @@ if (nrow(filter(data_study$excluded_data, error == "Value out of allowable range
     writeLines()
 }
 
-  traits.build::plot_trait_distribution_beeswarm(austraits, trait, "dataset_id", highlight = dataset_id, hide_ids = TRUE)
+  austraits::plot_trait_distribution_beeswarm(austraits, trait, "dataset_id", highlight = dataset_id, hide_ids = TRUE)
 
   writeLines(c(""))
 
